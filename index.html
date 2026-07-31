@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wilfred Abbeo — Software & Database Developer</title>
-<meta name="description" content="Wilfred Abbeo — IT Professional, Software & Database Developer, Cloud Security & DevSecOps Enthusiast.">
+<meta name="description" content="Wilfred Abbeo — IT Professional, Software & Database Developer, Systems Administrator, Cloud Security & DevSecOps Enthusiast.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
     --font-body:     'Inter', sans-serif;
     --font-mono:     'JetBrains Mono', monospace;
     --radius: 3px;
-    --max-width: 1040px;
+    --max-width: 960px;
   }
 
   *{ margin:0; padding:0; box-sizing:border-box; }
@@ -96,10 +96,10 @@
   /* ---------- HERO ---------- */
   section.hero{
     min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-    padding:120px 0 80px;
+    padding:104px 0 56px;
   }
   .hero-inner{
-    display:grid; grid-template-columns: 1fr auto; gap:56px; align-items:center;
+    display:grid; grid-template-columns: 1fr auto; gap:36px; align-items:center;
   }
   .hero-main{ min-width:0; }
 
@@ -144,7 +144,7 @@
   .terminal{
     font-family:var(--font-mono); font-size:13px; color:var(--text-muted);
     background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    padding:20px 24px; max-width:640px; margin-bottom:40px;
+    padding:14px 18px; max-width:640px; margin-bottom:24px;
   }
   .terminal .line{ margin-bottom:6px; opacity:0; animation: reveal .4s ease forwards; }
   .terminal .line:nth-child(1){ animation-delay:.1s; }
@@ -159,13 +159,13 @@
 
   h1.name{
     font-family:var(--font-display); font-weight:700;
-    font-size:clamp(42px, 7vw, 84px); line-height:1.02; letter-spacing:-0.02em;
-    margin-bottom:16px;
+    font-size:clamp(38px, 6vw, 72px); line-height:1.02; letter-spacing:-0.02em;
+    margin-bottom:10px;
     opacity:0; animation: reveal .6s ease forwards; animation-delay:2.2s;
   }
   p.role{
     font-family:var(--font-mono); font-size:clamp(13px,2vw,16px); color:var(--accent);
-    margin-bottom:28px; max-width:720px;
+    margin-bottom:18px; max-width:720px;
     opacity:0; animation: reveal .6s ease forwards; animation-delay:2.5s;
   }
   .hero-actions{
@@ -181,8 +181,8 @@
   .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
 
   /* ---------- SECTION SHARED ---------- */
-  section{ padding:100px 0; border-top:1px solid var(--border); }
-  .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:48px; }
+  section{ padding:60px 0; border-top:1px solid var(--border); }
+  .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:28px; }
   .section-tag{ font-family:var(--font-mono); font-size:12px; color:var(--accent); }
   .section-tag::before{ content:'// '; color:var(--text-dim); }
   h2.section-title{
@@ -190,26 +190,26 @@
   }
 
   /* ---------- ABOUT ---------- */
-  .about-grid{ display:grid; grid-template-columns: 1.2fr 1fr; gap:48px; align-items:start; }
-  .about-text p{ color:var(--text-muted); margin-bottom:16px; max-width:56ch; }
+  .about-grid{ display:grid; grid-template-columns: 1.2fr 1fr; gap:32px; align-items:start; }
+  .about-text p{ color:var(--text-muted); margin-bottom:12px; max-width:56ch; }
   .config-block{
     font-family:var(--font-mono); font-size:13px; background:var(--panel);
-    border:1px solid var(--border); border-radius:var(--radius); padding:22px 24px;
+    border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px;
   }
-  .config-block .row{ display:flex; justify-content:space-between; gap:16px; padding:8px 0; border-bottom:1px solid var(--border); }
+  .config-block .row{ display:flex; justify-content:space-between; gap:16px; padding:6px 0; border-bottom:1px solid var(--border); }
   .config-block .row:last-child{ border-bottom:none; }
   .config-key{ color:var(--text-dim); }
   .config-val{ color:var(--text); text-align:right; }
   .config-val.accent{ color:var(--accent); }
 
   /* ---------- PROJECTS ---------- */
-  .project-list{ display:flex; flex-direction:column; gap:20px; }
+  .project-list{ display:flex; flex-direction:column; gap:12px; }
   .project-card{
     background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    padding:28px; transition:border-color .2s ease, transform .2s ease;
+    padding:18px 20px; transition:border-color .2s ease, transform .2s ease;
   }
   .project-card:hover{ border-color:var(--border-hover); transform:translateY(-2px); }
-  .project-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:12px; }
+  .project-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:8px; }
   .project-name{ font-family:var(--font-display); font-weight:600; font-size:20px; display:flex; align-items:center; gap:10px; }
   .status-dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 6px var(--accent); flex-shrink:0; }
   .project-link{
@@ -218,7 +218,7 @@
     transition:all .15s ease; white-space:nowrap;
   }
   .project-link:hover{ color:var(--accent); border-color:var(--accent); }
-  .project-desc{ color:var(--text-muted); margin-bottom:18px; max-width:70ch; font-size:14.5px; }
+  .project-desc{ color:var(--text-muted); margin-bottom:12px; max-width:70ch; font-size:14px; }
   .tag-row{ display:flex; gap:8px; flex-wrap:wrap; }
   .tag{
     font-family:var(--font-mono); font-size:11px; color:var(--accent);
@@ -228,22 +228,57 @@
 
   /* ---------- SKILLS ---------- */
   .skills-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
-  .skill-panel{ background:var(--panel); padding:26px 24px; }
+  .skill-panel{ background:var(--panel); padding:18px 20px; }
   .skill-panel h3{
-    font-family:var(--font-mono); font-size:12px; color:var(--text-dim); text-transform:uppercase;
-    letter-spacing:0.06em; margin-bottom:16px;
+    font-family:var(--font-mono); font-size:11px; color:var(--text-dim); text-transform:uppercase;
+    letter-spacing:0.06em; margin-bottom:10px;
   }
   .skill-panel ul{ list-style:none; }
   .skill-panel li{
-    font-family:var(--font-mono); font-size:13.5px; color:var(--text); padding:6px 0;
+    font-family:var(--font-mono); font-size:13px; color:var(--text); padding:4px 0;
     display:flex; align-items:center; gap:10px;
   }
   .skill-panel li::before{ content:'✓'; color:var(--accent); font-weight:700; }
 
+  /* ---------- DOCUMENTS ---------- */
+  .doc-ls{
+    font-family:var(--font-mono); font-size:12px; color:var(--text-dim); margin-bottom:10px;
+  }
+  .doc-ls .prompt{ color:var(--accent); }
+  .doc-list{
+    border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;
+  }
+  .doc-row{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:14px 18px; background:var(--panel); border-bottom:1px solid var(--border);
+    flex-wrap:wrap; transition:background .15s ease;
+  }
+  .doc-row:last-child{ border-bottom:none; }
+  .doc-row:hover{ background:var(--panel-raised); }
+  .doc-left{ display:flex; align-items:center; gap:14px; min-width:0; }
+  .doc-icon{
+    font-family:var(--font-mono); font-size:11px; color:var(--accent);
+    border:1px solid rgba(61,220,151,0.3); background:rgba(61,220,151,0.08);
+    border-radius:var(--radius); padding:3px 6px; flex-shrink:0;
+  }
+  .doc-text{ min-width:0; }
+  .doc-name{ font-family:var(--font-display); font-weight:600; font-size:14.5px; }
+  .doc-meta{ font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:2px; }
+  .doc-actions{ display:flex; gap:8px; flex-shrink:0; }
+  .doc-actions a{
+    font-family:var(--font-mono); font-size:11px; color:var(--text-muted);
+    border:1px solid var(--border); padding:5px 10px; border-radius:var(--radius);
+    transition:all .15s ease;
+  }
+  .doc-actions a:hover{ color:var(--accent); border-color:var(--accent); }
+  .doc-note{
+    font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:14px;
+  }
+
   /* ---------- CONTACT ---------- */
   .contact-panel{
     background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    padding:48px; text-align:center;
+    padding:32px; text-align:center;
   }
   .contact-panel .prompt-line{ font-family:var(--font-mono); color:var(--text-muted); font-size:14px; margin-bottom:8px; }
   .contact-panel h2{ font-family:var(--font-display); font-size:clamp(26px,4vw,38px); margin-bottom:24px; }
@@ -260,7 +295,7 @@
     .menu-toggle{ display:inline-block; }
     .about-grid{ grid-template-columns:1fr; }
     .skills-grid{ grid-template-columns:1fr; }
-    section{ padding:64px 0; }
+    section{ padding:44px 0; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -277,6 +312,7 @@
     <nav class="links">
       <a href="#about">about</a>
       <a href="#projects">projects</a>
+      <a href="#documents">documents</a>
       <a href="#skills">skills</a>
       <a href="#contact">contact</a>
     </nav>
@@ -292,12 +328,12 @@
           <div class="line"><span class="prompt">$</span> whoami</div>
           <div class="line"><span class="val">wilfred_abbeo</span></div>
           <div class="line"><span class="prompt">$</span> cat role.txt</div>
-          <div class="line"><span class="val">IT Professional · Software &amp; Database Developer</span></div>
+          <div class="line"><span class="val">IT Professional · Systems Administrator · Software &amp; Database Developer</span></div>
           <div class="line"><span class="ok">[ok]</span> <span class="val">status: available for opportunities</span></div>
         </div>
 
         <h1 class="name">Wilfred Abbeo</h1>
-        <p class="role">IT Professional&nbsp;|&nbsp;Software &amp; Database Developer&nbsp;|&nbsp;Cloud Security &amp; DevSecOps Enthusiast</p>
+        <p class="role">IT Professional&nbsp;|&nbsp;Systems Administrator&nbsp;|&nbsp;IT Assistant&nbsp;|&nbsp;Software &amp; Database Developer&nbsp;|&nbsp;Cloud Security &amp; DevSecOps Enthusiast</p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projects">View projects</a>
@@ -332,12 +368,13 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I work across the stack that keeps data reliable and systems secure — building and maintaining databases, writing the software that talks to them, and paying close attention to how it's all deployed and protected.</p>
-        <p>My interest in cloud security and DevSecOps comes from the same place as my interest in databases: I like systems that are correct, observable, and hard to break by accident. That shows up in how I structure code, how I think about access and permissions, and how I approach a new project.</p>
+        <p>I'm Wilfred Abbeo — I work at the intersection of business and technology, translating real-world objectives into systems that actually hold up under use.</p>
+        <p>My background spans systems administration, software and database development, and a growing focus on cloud security and DevSecOps. Across all of it, the throughline is the same: think in systems, then build the tool that removes friction and makes the right decision the easy one.</p>
         <p>I'm always building — the projects below are a snapshot, with more (and more detail) on GitHub.</p>
       </div>
       <div class="config-block">
         <div class="row"><span class="config-key">role</span><span class="config-val">Software &amp; Database Developer</span></div>
+        <div class="row"><span class="config-key">also</span><span class="config-val">Systems Administrator, IT Assistant</span></div>
         <div class="row"><span class="config-key">focus</span><span class="config-val">Cloud Security / DevSecOps</span></div>
         <div class="row"><span class="config-key">status</span><span class="config-val accent">available</span></div>
         <div class="row"><span class="config-key">github</span><span class="config-val">@WilfredAbbeo</span></div>
@@ -387,14 +424,100 @@
         </div>
       </div>
 
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-name"><span class="status-dot"></span>SpotEase</div>
+          <a class="project-link" href="https://github.com/WilfredAbbeo/GW_SpotFinder" target="_blank" rel="noopener">View repository ↗</a>
+        </div>
+        <p class="project-desc">
+          A web app for students on GW's campus to find study spots — libraries, lounges, and cafés — along with community updates and campus alerts, all in one place.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Web App</span>
+          <span class="tag">Full-Stack</span>
+          <span class="tag">Campus Tool</span>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
+
+<section id="documents">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">03</span>
+      <h2 class="section-title">Documents</h2>
+    </div>
+
+    <div class="doc-ls"><span class="prompt">$</span> ls -la ./documents</div>
+
+    <div class="doc-list">
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Resume</div>
+            <div class="doc-meta">resume.pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="resume.pdf" target="_blank" rel="noopener">View</a>
+          <a href="resume.pdf" download>Download</a>
+        </div>
+      </div>
+
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Academic Transcript</div>
+            <div class="doc-meta">transcript.pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="transcript.pdf" target="_blank" rel="noopener">View</a>
+          <a href="transcript.pdf" download>Download</a>
+        </div>
+      </div>
+
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Papers &amp; Writing</div>
+            <div class="doc-meta">papers.pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="papers.pdf" target="_blank" rel="noopener">View</a>
+          <a href="papers.pdf" download>Download</a>
+        </div>
+      </div>
+
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Project Reports</div>
+            <div class="doc-meta">projects.pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="projects.pdf" target="_blank" rel="noopener">View</a>
+          <a href="projects.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="doc-note">// upload resume.pdf, transcript.pdf, papers.pdf and projects.pdf into the same folder as index.html — rename the files above to match, or add/remove rows as needed</p>
   </div>
 </section>
 
 <section id="skills">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-tag">03</span>
+      <span class="section-tag">04</span>
       <h2 class="section-title">Skills</h2>
     </div>
     <div class="skills-grid">
@@ -437,9 +560,18 @@
     <div class="contact-panel">
       <div class="prompt-line">$ contact --initiate</div>
       <h2>Let's build something reliable.</h2>
+      <!-- section 05 -->
+
+      <div class="config-block" style="max-width:420px; margin:0 auto 28px;">
+        <!-- Wilfred: replace the placeholder email/phone below with your real details -->
+        <div class="row"><span class="config-key">email</span><span class="config-val">your-email@example.com</span></div>
+        <div class="row"><span class="config-key">phone</span><span class="config-val">+1 (555) 123-4567</span></div>
+      </div>
+
       <div class="contact-actions">
         <a class="btn btn-primary" href="https://github.com/WilfredAbbeo" target="_blank" rel="noopener">GitHub ↗</a>
         <a class="btn btn-ghost" href="mailto:your-email@example.com">Email me</a>
+        <a class="btn btn-ghost" href="tel:+15551234567">Call me</a>
       </div>
     </div>
   </div>
