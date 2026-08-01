@@ -212,12 +212,19 @@
   .project-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:8px; }
   .project-name{ font-family:var(--font-display); font-weight:600; font-size:20px; display:flex; align-items:center; gap:10px; }
   .status-dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 6px var(--accent); flex-shrink:0; }
+  .project-links{ display:flex; gap:8px; flex-wrap:wrap; }
   .project-link{
     font-family:var(--font-mono); font-size:12px; color:var(--text-muted);
     border:1px solid var(--border); padding:6px 12px; border-radius:var(--radius);
     transition:all .15s ease; white-space:nowrap;
   }
   .project-link:hover{ color:var(--accent); border-color:var(--accent); }
+  .project-link.is-active{ color:var(--accent); border-color:var(--accent); }
+  .project-shot{
+    display:block; width:100%; border-radius:var(--radius); border:1px solid var(--border);
+    margin-bottom:14px; cursor:pointer;
+  }
+  .project-shot.hidden{ display:none; }
   .project-desc{ color:var(--text-muted); margin-bottom:12px; max-width:70ch; font-size:14px; }
   .tag-row{ display:flex; gap:8px; flex-wrap:wrap; }
   .tag{
@@ -274,6 +281,10 @@
   .doc-note{
     font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:14px;
   }
+  .doc-group-label{
+    font-family:var(--font-mono); font-size:11px; color:var(--text-dim);
+    margin:20px 0 8px;
+  }
 
   /* ---------- CONTACT ---------- */
   .contact-panel{
@@ -325,11 +336,11 @@
     <div class="hero-inner">
       <div class="hero-main">
         <div class="terminal">
-          <div class="line"><span class="prompt">$</span> whoami</div>
+          <div class="line"><span class="prompt"></span> whoami</div>
           <div class="line"><span class="val">wilfred_abbeo</span></div>
-          <div class="line"><span class="prompt">$</span> cat role.txt</div>
+          <div class="line"><span class="prompt"></span></div>
           <div class="line"><span class="val">IT Professional · Systems Administrator · Software &amp; Database Developer</span></div>
-          <div class="line"><span class="ok">[ok]</span> <span class="val">status: available for opportunities</span></div>
+          <div class="line"><span class="ok"></span> <span class="val">status: available for opportunities</span></div>
         </div>
 
         <h1 class="name">Wilfred Abbeo</h1>
@@ -395,11 +406,14 @@
       <div class="project-card">
         <div class="project-top">
           <div class="project-name"><span class="status-dot"></span>DB-CRUD-Actions</div>
-          <a class="project-link" href="https://github.com/WilfredAbbeo/DB-CRUD-Actions" target="_blank" rel="noopener">View repository ↗</a>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/WilfredAbbeo/DB-CRUD-Actions" target="_blank" rel="noopener">View repository ↗</a>
+            <a class="project-link" href="#" onclick="return toggleShot(event,'crud-shot',this)">Screenshot</a>
+          </div>
         </div>
+        <img id="crud-shot" class="project-shot hidden" src="crud.jpg" alt="DB-CRUD-Actions terminal demo showing CRUD menu and inserted row">
         <p class="project-desc">
           A database project focused on core CRUD operations — Create, Read, Update, and Delete — covering the fundamental patterns behind reliable data management.
-          <!-- Wilfred: replace this description with your own repo README summary if you'd like it more specific -->
         </p>
         <div class="tag-row">
           <span class="tag">Database</span>
@@ -411,11 +425,14 @@
       <div class="project-card">
         <div class="project-top">
           <div class="project-name"><span class="status-dot"></span>Movie &amp; Show Finder API</div>
-          <a class="project-link" href="https://github.com/WilfredAbbeo/Test_API-for-Movie-and-show-finder-" target="_blank" rel="noopener">View repository ↗</a>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/WilfredAbbeo/Test_API-for-Movie-and-show-finder-" target="_blank" rel="noopener">View repository ↗</a>
+            <a class="project-link" href="#" onclick="return toggleShot(event,'testapi-shot',this)">Screenshot</a>
+          </div>
         </div>
+        <img id="testapi-shot" class="project-shot hidden" src="testapi.jpg" alt="Movie and Show Finder API terminal demo showing similar-title results">
         <p class="project-desc">
           A Python-based API project for searching and retrieving movie and TV show information, testing how a client application consumes and handles external API responses.
-          <!-- Wilfred: replace this description with your own repo README summary if you'd like it more specific -->
         </p>
         <div class="tag-row">
           <span class="tag">Python</span>
@@ -427,8 +444,12 @@
       <div class="project-card">
         <div class="project-top">
           <div class="project-name"><span class="status-dot"></span>SpotEase</div>
-          <a class="project-link" href="https://github.com/WilfredAbbeo/GW_SpotFinder" target="_blank" rel="noopener">View repository ↗</a>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/WilfredAbbeo/GW_SpotFinder" target="_blank" rel="noopener">View repository ↗</a>
+            <a class="project-link" href="#" onclick="return toggleShot(event,'spotease-shot',this)">Screenshot</a>
+          </div>
         </div>
+        <img id="spotease-shot" class="project-shot hidden" src="spotease.jpg" alt="SpotEase homepage showing GWU study space search and recommended spaces">
         <p class="project-desc">
           A web app for students on GW's campus to find study spots — libraries, lounges, and cafés — along with community updates and campus alerts, all in one place.
         </p>
@@ -450,7 +471,7 @@
       <h2 class="section-title">Documents</h2>
     </div>
 
-    <div class="doc-ls"><span class="prompt">$</span> ls -la ./documents</div>
+    <div class="doc-ls"><span class="prompt"></span> // documents</div>
 
     <div class="doc-list">
       <div class="doc-row">
@@ -480,18 +501,22 @@
           <a href="transcript.pdf" download>Download</a>
         </div>
       </div>
+    </div>
 
+    <div class="doc-group-label">// papers &amp; writing</div>
+    <div class="doc-list">
+      <!-- Wilfred: this is a repeatable row — copy/paste it for each paper you add -->
       <div class="doc-row">
         <div class="doc-left">
           <span class="doc-icon">PDF</span>
           <div class="doc-text">
-            <div class="doc-name">Papers &amp; Writing</div>
-            <div class="doc-meta">papers.pdf</div>
+            <div class="doc-name">Open Source Assessment</div>
+            <div class="doc-meta">Open_Source_Assessment_for_Best_Buy.pdf</div>
           </div>
         </div>
         <div class="doc-actions">
-          <a href="papers.pdf" target="_blank" rel="noopener">View</a>
-          <a href="papers.pdf" download>Download</a>
+          <a href="Open_Source_Assessment_for_Best_Buy.pdf" target="_blank" rel="noopener">View</a>
+          <a href="Open_Source_Assessment_for_Best_Buy.pdf" download>Download</a>
         </div>
       </div>
 
@@ -499,18 +524,78 @@
         <div class="doc-left">
           <span class="doc-icon">PDF</span>
           <div class="doc-text">
-            <div class="doc-name">Project Reports</div>
-            <div class="doc-meta">projects.pdf</div>
+            <div class="doc-name">Risk Assessment for Best Buy</div>
+            <div class="doc-meta">Best_Buy_Risk_Assessment.pdf</div>
           </div>
         </div>
         <div class="doc-actions">
-          <a href="projects.pdf" target="_blank" rel="noopener">View</a>
-          <a href="projects.pdf" download>Download</a>
+          <a href="Best_Buy_Risk_Assessment.pdf" target="_blank" rel="noopener">View</a>
+          <a href="Best_Buy_Risk_Assessment.pdf" download>Download</a>
         </div>
       </div>
     </div>
 
-    <p class="doc-note">// upload resume.pdf, transcript.pdf, papers.pdf and projects.pdf into the same folder as index.html — rename the files above to match, or add/remove rows as needed</p>
+    <div class="doc-group-label">// project reports</div>
+    <div class="doc-list">
+      <!-- Wilfred: this is a repeatable row — copy/paste it for each project write-up you add -->
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Predictive Modeling of Energy-Efficient Routing Protocols in IoT Sensor</div>
+            <div class="doc-meta">Predictive_Modeling_of_Energy-Efficient_Routing_Protocols_in_IoT_Sensor.pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="Predictive_Modeling_of_Energy-Efficient_Routing_Protocols_in_IoT_Sensor.pdf" target="_blank" rel="noopener">View</a>
+          <a href="Predictive_Modeling_of_Energy-Efficient_Routing_Protocols_in_IoT_Sensor.pdf" download>Download</a>
+        </div>
+      </div>
+
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Building a Unified Multicloud Strategy for Goldman Sachs</div>
+            <div class="doc-meta">Building_a_Unified_Multicloud_Strategy_for_GoldmanSachs.pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="Building_a_Unified_Multicloud_Strategy_for_GoldmanSachs.pdf" target="_blank" rel="noopener">View</a>
+          <a href="Building_a_Unified_Multicloud_Strategy_for_GoldmanSachs.pdf" download>Download</a>
+        </div>
+      </div>
+
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Fowler AI</div>
+            <div class="doc-meta">Fowler_AI.pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="Fowler_AI.pdf" target="_blank" rel="noopener">View</a>
+          <a href="Fowler_AI.pdf" download>Download</a>
+        </div>
+      </div>
+
+      <div class="doc-row">
+        <div class="doc-left">
+          <span class="doc-icon">PDF</span>
+          <div class="doc-text">
+            <div class="doc-name">Academic Networking [GW-CONNECT]</div>
+            <div class="doc-meta">Academic_networking_[GW-CONNECT].pdf</div>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <a href="Academic_networking_[GW-CONNECT].pdf" target="_blank" rel="noopener">View</a>
+          <a href="Academic_networking_[GW-CONNECT].pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="doc-note"></p>
   </div>
 </section>
 
@@ -550,7 +635,7 @@
       </div>
     </div>
     <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:16px;">
-      // edit these lists to match your exact toolset
+      
     </p>
   </div>
 </section>
@@ -558,20 +643,18 @@
 <section id="contact">
   <div class="wrap">
     <div class="contact-panel">
-      <div class="prompt-line">$ contact --initiate</div>
+      <div class="prompt-line"> contact </div>
       <h2>Let's build something reliable.</h2>
-      <!-- section 05 -->
 
       <div class="config-block" style="max-width:420px; margin:0 auto 28px;">
-        <!-- Wilfred: replace the placeholder email/phone below with your real details -->
-        <div class="row"><span class="config-key">email</span><span class="config-val">your-email@example.com</span></div>
-        <div class="row"><span class="config-key">phone</span><span class="config-val">+1 (555) 123-4567</span></div>
+        <div class="row"><span class="config-key">email</span><span class="config-val">wilfredexcell@gmail.com</span></div>
+        <div class="row"><span class="config-key">phone</span><span class="config-val">+1 (667) 320-3755</span></div>
       </div>
 
       <div class="contact-actions">
         <a class="btn btn-primary" href="https://github.com/WilfredAbbeo" target="_blank" rel="noopener">GitHub ↗</a>
-        <a class="btn btn-ghost" href="mailto:your-email@example.com">Email me</a>
-        <a class="btn btn-ghost" href="tel:+15551234567">Call me</a>
+        <a class="btn btn-ghost" href="mailto:wilfredxcell@gmail.com">Email me</a>
+        <a class="btn btn-ghost" href="tel:+16673203755">Call me</a>
       </div>
     </div>
   </div>
@@ -583,5 +666,15 @@
   </div>
 </footer>
 
+<script>
+  function toggleShot(e, id, link){
+    e.preventDefault();
+    var img = document.getElementById(id);
+    var showing = !img.classList.contains('hidden');
+    img.classList.toggle('hidden');
+    link.classList.toggle('is-active', !showing);
+    link.textContent = showing ? 'Screenshot' : 'Hide screenshot';
+  }
+</script>
 </body>
 </html>
